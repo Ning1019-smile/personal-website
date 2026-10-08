@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>个人展示平台 | 上海杉达学院 软件工程</title>
+  <meta name="description" content="上海杉达学院软件工程专业学生的个人展示平台：个人简介、技能与项目作品集。" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">阿爪<span>.dev</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#home">首页</a>
+        <a href="#about">关于我</a>
+        <a href="#skills">技能</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌓</button>
+        <button class="nav__menu" id="menuToggle" aria-label="菜单">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 首页 / Hero -->
+  <section class="hero" id="home">
+    <div class="hero__bg"></div>
+    <div class="hero__inner">
+      <p class="hero__eyebrow">你好，我是</p>
+      <h1 class="hero__name" id="heroName">Ning</h1>
+      <p class="hero__title">上海杉达学院 · 软件工程 · 大二在读</p>
+      <p class="hero__tagline" id="heroTagline">乐于接触新技术，把想法变成能跑的东西。</p>
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--primary">查看我的项目</a>
+        <a href="#contact" class="btn btn--ghost">联系我</a>
+      </div>
+      <div class="hero__stats" id="heroStats"></div>
+    </div>
+  </section>
+
+  <!-- 关于我 -->
+  <section class="section" id="about">
+    <div class="section__head">
+      <span class="section__kicker">ABOUT</span>
+      <h2 class="section__title">关于我</h2>
+    </div>
+    <div class="about">
+      <div class="about__avatar" id="aboutAvatar">N</div>
+      <div class="about__body">
+        <p id="aboutBio">
+          我是上海杉达学院软件工程专业的一名大二学生，对新技术始终保持好奇心，喜欢在课业之外折腾各种框架、工具和有趣的小项目。
+          除了写代码，我也喜欢唱歌和弹钢琴——它们让我在调试 bug 之余保持节奏感。
+        </p>
+        <div class="about__hobbies">
+          <h3>兴趣爱好</h3>
+          <div class="chips" id="hobbyChips">
+            <span class="chip">🎤 唱歌</span>
+            <span class="chip">🎹 钢琴</span>
+            <span class="chip">💻 折腾新技术</span>
+          </div>
+        </div>
+        <div class="about__facts" id="aboutFacts"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section class="section section--alt" id="skills">
+    <div class="section__head">
+      <span class="section__kicker">SKILLS</span>
+      <h2 class="section__title">技能栈</h2>
+    </div>
+    <div class="skills" id="skillsGrid"></div>
+  </section>
+
+  <!-- 项目 -->
+  <section class="section" id="projects">
+    <div class="section__head">
+      <span class="section__kicker">PROJECTS</span>
+      <h2 class="section__title">项目作品</h2>
+      <p class="section__sub">这里展示我做过的所有项目，点击分类可筛选。</p>
+    </div>
+    <div class="projects__filter" id="projectFilter"></div>
+    <div class="projects__grid" id="projectsGrid"></div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="section section--alt" id="contact">
+    <div class="section__head">
+      <span class="section__kicker">CONTACT</span>
+      <h2 class="section__title">联系我</h2>
+    </div>
+    <div class="contact">
+      <p class="contact__lead">想合作、想交流，或者只是想聊聊技术？随时找我。</p>
+      <div class="contact__links" id="contactLinks"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span id="footerName">Ning</span> · 上海杉达学院 软件工程</p>
+    <p class="footer__note">用 ❤️ 与 ☕ 手工搭建</p>
+  </footer>
+
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
