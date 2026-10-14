@@ -90,7 +90,7 @@
         .map((h) => `<li>${h}</li>`)
         .join("");
       const links = Object.entries(p.links || {})
-        .map(([k, v]) => `<a href="${v}" target="_blank" rel="noopener">${linkLabel(k)} ↗</a>`)
+        .map(([k, v]) => `<a href="${escapeAttr(v)}" target="_blank" rel="noopener">${escapeAttr(linkLabel(k))} ↗</a>`)
         .join("");
       card.innerHTML = `
         <div class="project-card__top">
@@ -108,6 +108,10 @@
     observeReveal();
   }
 
+  function escapeAttr(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+  }
+
   function linkLabel(k) {
     return { github: "GitHub", demo: "演示", doc: "文档", store: "华为应用市场" }[k] || k;
   }
@@ -118,12 +122,43 @@
   const contactEl = document.getElementById("contactLinks");
   D.contact.forEach((c) => {
     const a = document.createElement("a");
-    a.href = c.href;
-    a.target = "_blank";
     a.rel = "noopener";
     a.textContent = c.label;
+    if (c.wechat || c.copy) {
+      // 微信 / 邮箱 等：点击复制
+      const val = c.wechat || c.copy;
+      a.href = "javascript:void(0)";
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        copyText(val);
+        const old = c.label;
+        a.textContent = "✅ 已复制：" + val;
+        setTimeout(() => { a.textContent = old; }, 1500);
+      });
+    } else {
+      a.href = c.href || "#";
+      a.target = "_blank";
+    }
     contactEl.appendChild(a);
   });
+
+  function copyText(t) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).catch(() => fallbackCopy(t));
+    } else {
+      fallbackCopy(t);
+    }
+  }
+  function fallbackCopy(t) {
+    const ta = document.createElement("textarea");
+    ta.value = t;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
 
   // 深色模式切换
   const toggle = document.getElementById("themeToggle");
