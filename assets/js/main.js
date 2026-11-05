@@ -23,15 +23,6 @@
     statsEl.appendChild(d);
   });
 
-  // 爱好
-  const hobbyEl = document.getElementById("hobbyChips");
-  D.profile.hobbies.forEach((h) => {
-    const s = document.createElement("span");
-    s.className = "chip";
-    s.textContent = h;
-    hobbyEl.appendChild(s);
-  });
-
   // 事实卡片
   const factsEl = document.getElementById("aboutFacts");
   D.profile.facts.forEach((f) => {
