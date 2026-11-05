@@ -186,8 +186,9 @@ a { color: inherit; text-decoration: none; }
 .footer__note { font-size: .82rem; margin-top: 6px; }
 
 /* ===== 滚动出现动画 ===== */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
-.reveal.is-visible { opacity: 1; transform: none; }
+/* 仅在 JS 启用时隐藏，配合滚动观察器淡入；JS 未运行则直接可见，避免空白 */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* ===== 响应式 ===== */
 @media (max-width: 720px) {
