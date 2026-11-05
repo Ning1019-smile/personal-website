@@ -20,14 +20,14 @@ window.PORTFOLIO = {
       { k: "学校", v: "上海杉达学院" },
       { k: "专业", v: "软件工程" },
       { k: "年级", v: "2025级" },
-      { k: "状态", v: "求职 / 接项目ing" }
+      { k: "方向", v: "鸿蒙 App / Agent / 网页开发" }
     ]
   },
 
   stats: [
-    { num: "2", label: "完成项目" },
+    { num: "7", label: "完成项目" },
     { num: "4+", label: "掌握技术" },
-    { num: "2", label: "兴趣爱好" }
+    { num: "3", label: "兴趣爱好" }
   ],
 
   skills: [
@@ -61,13 +61,78 @@ window.PORTFOLIO = {
       links: { store: "https://appgallery.huawei.com/app/detail?id=com.example.demoofning&channelId=SHARE&source=appshare" }
     },
     {
+      title: "今日手记（HarmonyOS App）",
+      period: "2026.10",
+      role: "独立开发",
+      desc: "一款鸿蒙端的随手记录与整理应用，主打轻量、即时捕获灵感与待办。",
+      highlights: [
+        "基于 HarmonyOS 原生开发",
+        "轻量随手记录，适合日常灵感与待办管理"
+      ],
+      tags: ["HarmonyOS", "ArkTS", "鸿蒙"],
+      links: { github: "https://github.com/Ning1019-smile/jinrilu" }
+    },
+    {
+      title: "未晚（HarmonyOS App）",
+      period: "2026.10",
+      role: "独立开发",
+      desc: "一款鸿蒙端的时间 / 习惯管理小应用，用轻量提醒帮助把事情“现在就开始”。",
+      highlights: [
+        "基于 HarmonyOS 原生开发",
+        "轻量提醒与记录，主打“未晚——现在开始还不晚”"
+      ],
+      tags: ["HarmonyOS", "ArkTS", "鸿蒙"],
+      links: { github: "https://github.com/Ning1019-smile/weiwan" }
+    },
+    {
+      title: "书栈（HarmonyOS PC）",
+      period: "2026.10",
+      role: "独立开发",
+      desc: "面向鸿蒙 PC 的教材章节阅读工作台，方便在电脑端浏览、标注与整理课本章节。",
+      highlights: [
+        "基于 HarmonyOS PC 开发",
+        "教材章节阅读与整理工作台",
+        "适配桌面端交互"
+      ],
+      tags: ["HarmonyOS", "ArkTS", "鸿蒙", "鸿蒙PC"],
+      links: { github: "https://github.com/Ning1019-smile/shu-zhan" }
+    },
+    {
+      title: "羽毛球社团管理系统（AI 智能体版）",
+      period: "2026.11",
+      role: "设计 + 开发",
+      desc: "为东浩兰生集团「AI 来赛」数智化创新大赛·元气玩咖赛道开发的职工羽毛球社团管理工具，核心是能听懂自然语言的对话式智能体。",
+      highlights: [
+        "对话式 Agent：说一句即自动调工具完成配对 / 查分 / 出战报",
+        "智能配对（伤病规避、双打平衡）+ 积分与战绩档案",
+        "AI 战报 + canvas 海报，纯前端零依赖可离线演示",
+        "可接入 OpenAI 兼容大模型（DeepSeek / 通义 / 混元等）"
+      ],
+      tags: ["JavaScript", "AI Agent", "前端"],
+      links: { github: "https://github.com/Ning1019-smile/badminton-club-system" }
+    },
+    {
+      title: "北辰在线学院 · AI 学习支持与辅导协作（FDE训练中心）",
+      period: "2026.11",
+      role: "设计 + 开发",
+      desc: "面向 FDE 训练中心 / 北辰在线学院的 AI 学习支持方案，用 AI 把求助漏单压到 2% 以内、首次响应从 26h 压到 8h。",
+      highlights: [
+        "多源识别“支持需求”信号并合并为工单，根治漏单",
+        "生成建议 + 人工复核，不自动给学生定性 / 评分",
+        "零依赖 RAG 知识库（离线 TF-IDF）+ 可运行 MVP",
+        "配套流程图、设计方案与报价单，满足试点验收"
+      ],
+      tags: ["Python", "RAG", "AI"],
+      links: { github: "https://github.com/Ning1019-smile/fde-training-center" }
+    },
+    {
       title: "个人展示平台（本网站）",
       period: "2026.10",
       role: "设计 + 前端",
       desc: "用纯静态页面搭的个人主页，结构清晰、方便随时更新项目和技能。",
       highlights: ["响应式布局，手机/电脑都好看", "支持深色模式", "项目数据抽成数组，改内容不用动结构"],
       tags: ["HTML", "CSS", "JavaScript"],
-      links: { github: "https://github.com/Ning1019-smile/Personal-web" }
+      links: { github: "https://github.com/Ning1019-smile/personal-website" }
     }
   ],
 
