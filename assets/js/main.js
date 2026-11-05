@@ -2,6 +2,7 @@
 (function () {
   const D = window.PORTFOLIO;
   if (!D) return;
+  document.documentElement.classList.add("js");
 
   // 基本信息
   document.getElementById("heroName").textContent = D.profile.name;
@@ -188,4 +189,9 @@
     document.querySelectorAll(".reveal:not(.is-visible)").forEach((el) => io.observe(el));
   }
   observeReveal();
+
+  // 兜底：若观察器未及时触发，1.5s 后强制显示全部内容，避免页面空白
+  setTimeout(() => {
+    document.querySelectorAll(".reveal:not(.is-visible)").forEach((el) => el.classList.add("is-visible"));
+  }, 1500);
 })();
